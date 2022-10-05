@@ -36,13 +36,6 @@ defmodule BluetoothAmp.Umbrella.MixProject do
   defp deps do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-
-      {:waffle, "~> 1.1.0"},
-
-      {:ex_aws, "~> 2.1.2"},
-      {:ex_aws_s3, "~> 2.0"},
-      {:hackney, "~> 1.9"},
-      {:sweet_xml, "~> 0.6"}
     ]
   end
 
@@ -58,7 +51,7 @@ defmodule BluetoothAmp.Umbrella.MixProject do
   defp aliases do
     [
       # run `mix setup` in all child apps
-      setup: ["cmd mix setup"]
+      setup: ["cmd mix setup"],
     ]
   end
 end
