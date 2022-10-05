@@ -24,13 +24,10 @@ RUN mix deps.get --only $MIX_ENV
 RUN mkdir config
 COPY config/config.exs config/$MIX_ENV.exs config/runtime.exs config/
 
-COPY apps/bluetooth_amp_web/priv apps/bluetooth_amp_web/priv
-COPY apps/bluetooth_amp_web/assets apps/bluetooth_amp_web/assets
+COPY apps apps 
 RUN cd apps/bluetooth_amp_web && mix assets.deploy
 
 RUN mix deps.compile
-
-COPY apps apps 
 
 RUN mix compile
 
