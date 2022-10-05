@@ -12,6 +12,7 @@ import Config
 
 config :bluetooth_amp_web, BluetoothAmpWeb.Endpoint,
   http: [ip: {0, 0, 0, 0}, port: 80],
+  check_origin: ["http://192.168.0.31"],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # ## SSL Support
