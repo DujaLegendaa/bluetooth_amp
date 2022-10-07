@@ -7,6 +7,25 @@ import Config
 # any compile-time configuration in here, as it won't be applied.
 # The block below contains prod specific runtime configuration.
 if config_env() == :prod do
+  mpd_ip = 
+    System.get_env("MPD_IP") ||
+      raise """
+        environment variable MPD_IP not set
+        """
+  mpd_port = 
+    System.get_env("MPD_PORT") ||
+      raise """
+        environment variable MPD_PORT not set
+        """
+
+  config :player, 
+    mpd_ip: 
+      mpd_ip
+      |> String.split(".")
+      |> Enum.map(&String.to_integer/1)
+      |> List.to_tuple(),
+    mpd_port: String.to_integer(mpd_port)
+
   file_server =
     System.get_env("FILE_SERVER_IP") ||
       raise """

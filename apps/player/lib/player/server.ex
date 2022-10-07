@@ -8,7 +8,7 @@ defmodule Player.Server do
   end
 
   defp connect() do
-    _ = :gen_tcp.connect({192, 168, 0, 17}, 6600, [:binary, active: true, keepalive: true])
+    _ = :gen_tcp.connect(Application.get_env(:player, :mpd_ip), Application.get_env(:player, :mpd_port), [:binary, active: true, keepalive: true])
   end
 
   def init({pubsub, channel}) do
