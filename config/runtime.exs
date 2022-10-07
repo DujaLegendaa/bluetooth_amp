@@ -59,6 +59,10 @@ if config_env() == :prod do
       """
 
   config :bluetooth_amp_web, BluetoothAmpWeb.Endpoint,
+    url: [
+      host: System.get_env("HOST") || "localhost", 
+      port: String.to_integer(System.get_env("PORT") || "4000")
+    ],
     http: [
       # Enable IPv6 and bind on all interfaces.
       # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
