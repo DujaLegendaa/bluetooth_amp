@@ -11,8 +11,8 @@ import Config
 # before starting your production server.
 
 config :bluetooth_amp_web, BluetoothAmpWeb.Endpoint,
-  http: [ip: {0, 0, 0, 0}, port: 80],
-  check_origin: ["http://192.168.0.31"],
+  url: [host: "bamp.bufabu.tk", port: 443],
+  https: [ip: {0, 0, 0, 0}, port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # ## SSL Support

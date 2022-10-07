@@ -21,7 +21,7 @@ config :bluetooth_amp_web,
 
 # Configures the endpoint
 config :bluetooth_amp_web, BluetoothAmpWeb.Endpoint,
-  url: [host: System.get_env("HOST") || raise "sys env HOST not provided"],
+  url: [host: "localhost"],
   render_errors: [view: BluetoothAmpWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: BluetoothAmp.PubSub,
   live_view: [signing_salt: "jWmepv82"]
