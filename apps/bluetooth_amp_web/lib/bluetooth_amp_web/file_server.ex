@@ -5,7 +5,7 @@ defmodule BluetoothAmpWeb.B3 do
       "#{Application.get_env(:bluetooth_amp_web, :file_server)}/upload", 
       {:multipart, [
         {"name", name},
-        {"quality", quality},
+        {"quality", Integer.to_string(quality)},
         {:file, file_path}
       ]}
     )
