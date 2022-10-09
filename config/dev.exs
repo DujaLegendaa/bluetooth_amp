@@ -1,5 +1,12 @@
 import Config
 
+config :player,
+  mpd_ip: {127, 0, 0, 1},
+  mpd_port: 6600
+
+config :bluetooth_amp_web, 
+  file_server: "localhost:4001"
+
 # Configure your database
 config :bluetooth_amp, BluetoothAmp.Repo,
   database: Path.expand("../bluetooth_amp_dev.db", Path.dirname(__ENV__.file)),

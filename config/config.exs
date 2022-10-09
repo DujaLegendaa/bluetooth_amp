@@ -9,8 +9,6 @@
 # move said applications out of the umbrella.
 import Config
 
-config :bluetooth_amp_web, 
-  file_server: "localhost:4001"
 # Configure Mix tasks and generators
 config :bluetooth_amp,
   ecto_repos: [BluetoothAmp.Repo]
